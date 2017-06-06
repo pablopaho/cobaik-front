@@ -1,1 +1,12 @@
-<alert type="success">hello</alert>
+    <h1>{{title}}</h1>
+    <h2>My Bikes</h2>
+    <ul class="bikes">
+      <li *ngFor="let bike of bikes"
+        [class.selected]="bike === selectedBike"
+        (click)="onSelect(bike)">
+        <span class="badge">{{bike.name}}</span> {{bike.reference}}
+      </li>
+    </ul>
+    <bike-detail [bike]="selectedBike"></bike-detail>
+
+<!-- <alert type="success">hello</alert> -->
