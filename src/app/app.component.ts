@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Bike } from './bike-detail/bike';
 import { BikeService} from './bike.service';
+import { Observable }        from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +12,13 @@ import { BikeService} from './bike.service';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  bikes: Bike[];
+  bikes: Observable<Bike[]>;
   selectedBike: Bike;
 
   constructor(private bikeService: BikeService) { }
 
-  getBikes(): void {
-    this.bikeService.getBikes().then(bikes => this.bikes = bikes);
-  }    
-
   ngOnInit(): void {
-    this.getBikes();
+      this.bikes = this.bikeService.getBikes()
   }
 
   onSelect(bike: Bike): void {
