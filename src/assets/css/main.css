@@ -5,8 +5,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 html,
-body,
-#ember344 {
+body {
     width: 100%;
     height: 100%;
 }
