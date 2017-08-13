@@ -25,7 +25,7 @@ hr.light {
 }
 
 a {
-    color: #f05f40;
+    color: blue;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -33,7 +33,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #3cd160;
 }
 
 h1,
@@ -99,7 +99,7 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: #3cd160;
 }
 
 .navbar-default .nav > li>a,
