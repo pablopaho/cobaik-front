@@ -14,6 +14,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { ContactComponent } from './contact/contact.component';
 
 
 const appRoutes: Routes = [
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     BikeDetailComponent,
     TermsAndConditionsComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule, 
