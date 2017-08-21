@@ -13,6 +13,8 @@ import { BikeService } from './bike.service';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
+
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,10 +38,11 @@ const appRoutes: Routes = [
     BrowserModule, 
     FormsModule,
     HttpModule,
+    Ng2PageScrollModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
   ],
   bootstrap: [AppComponent]
 })

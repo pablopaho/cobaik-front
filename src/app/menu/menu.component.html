@@ -5,22 +5,20 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand page-scroll" routerLink="/home" href="#page-top">Cobaik</a>
+      <a class="navbar-brand page-scroll" routerLink="/home" href="#page-top" pageScroll [pageScrollDuration]="500">Cobaik</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="page-scroll" routerLink="/home" href="#about">¿Qué es Cobaik?</a>
+          <a pageScroll routerLink="/home" href="#about" [pageScrollDuration]="700">¿Qué es Cobaik?</a>
         </li>
         <li>
-          <a class="page-scroll" routerLink="/home" href="#services">¿Cómo funciona?</a>
-
-          <!-- <a class="page-scroll" routerLink="/home" href="#services">¿Cómo funciona?</a> -->
+            <a pageScroll routerLink="/home" href="#services" [pageScrollDuration]="700">¿Cómo funciona?</a>
         </li>
         <li>
-          <a class="page-scroll" routerLink="/home" href="#contact">Contacto</a>
+          <a pageScroll routerLink="/home" href="#contact" [pageScrollDuration]="700">Contacto</a>
         </li>
       </ul>
     </div>
