@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Contact } from './contact';
+import { Component, OnInit, Input } from '@angular/core';
 import { ContactService } from './contact.service';
+import { Contact } from './contact';
+
 
 @Component({
   selector: 'app-contact',
@@ -9,8 +10,8 @@ import { ContactService } from './contact.service';
   providers: [ ContactService ]
 })
 export class ContactComponent implements OnInit {
+  @Input() contact: Contact = new Contact("","",19,"","","");
   submitted = false;
-  contact = new Contact("","",19,"","","");
 
   constructor(private contactService: ContactService) { }
 
