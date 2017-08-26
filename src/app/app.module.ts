@@ -7,6 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './contact/contact.service';
+
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
 
@@ -14,9 +17,6 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
-import { ContactService } from './contact/contact.service';
-import { ContactComponent } from './contact/contact.component';
-
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,11 +31,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
+    ContactComponent,
     BikeDetailComponent,
     TermsAndConditionsComponent,
     MenuComponent,
-    FooterComponent,
-    ContactComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule, 
