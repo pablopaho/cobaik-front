@@ -18,7 +18,6 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() { 
-    console.log(this.contact);
     this.contactService.createContact(this.contact)
       .then(r => {
         console.log(r)

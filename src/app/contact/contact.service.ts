@@ -21,7 +21,7 @@ export class ContactService {
     return this.http.
                 post(this.contactUrl, JSON.stringify(contact), {headers: this.headers})
                .toPromise()
-               .then(res => res.json().data as string)
+               .then(res => res)
                .catch(this.handleError);
   }
 
