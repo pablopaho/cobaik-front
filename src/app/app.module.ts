@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { AlertModule } from 'ngx-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
