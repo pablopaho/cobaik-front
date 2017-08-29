@@ -9,21 +9,26 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <form (ngSubmit)="onSubmit()" name="sentMessage" id="contactForm" novalidate #contactForm="ngForm">
+        <div class="row">
+          <div *ngIf="submitted" class="alert alert-success">
+            Mensaje enviado !!
+          </div>
+        </div>
+        <form (ngSubmit)="onSubmit()" name="contactForm" id="contactForm" novalidate #contactForm="ngForm">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <input type="text" [(ngModel)]="contact.fullname" name="fullname" class="form-control" placeholder="Nombre *" id="name" required #fullname="ngModel">
-                  <div  class="help-block text-danger" [hidden]="fullname.valid || fullname.pristine">
-                    <div *ngIf="fullname.errors && fullname.errors.required">
+                  <div  class="help-block text-danger" *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                    <div *ngIf="fullname.errors.required">
                     Por favor ingresa tu nombre.
                     </div>
                   </div>
               </div>
               <div class="form-group">
                 <input type="email" [(ngModel)]="contact.email" name="email" class="form-control" placeholder="Email *" id="email" required #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                  <div  class="help-block text-danger" [hidden]="email.valid || email.pristine">
-                    <div *ngIf="email.errors && email.errors.required">
+                  <div  class="help-block text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">
                     Por favor ingresa tu correo electrónico.
                     </div>
                     <div *ngIf="email.errors && email.errors.pattern">
@@ -33,20 +38,24 @@
               </div>
               <div class="form-group">
                 <input type="number" [(ngModel)]="contact.age" name="age" class="form-control" placeholder="Edad" id="age" min="18" max="70" required data-validation-required-message="Por favor ingresa tu edad." #age="ngModel">
-                <p class="help-block text-danger"></p>
+                  <div  class="help-block text-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
+                    <div *ngIf="age.errors.required">
+                      Por favor ingresa tu ciudad de residencia.
+                    </div>
+                  </div>
               </div>
               <div class="form-group">
                 <input type="text" [(ngModel)]="contact.residence_city" name="residence_city" class="form-control" placeholder="Ciudad de residencia *" id="residence_city" required data-validation-required-message="Por favor ingresa tu ciudad de residencia." #residence_city="ngModel">
-                  <div  class="help-block text-danger" [hidden]="residence_city.valid || residence_city.pristine">
-                    <div *ngIf="residence_city.errors && residence_city.errors.required">
+                  <div  class="help-block text-danger" *ngIf="residence_city.invalid && (residence_city.dirty || residence_city.touched)">
+                    <div *ngIf="residence_city.errors.required">
                       Por favor ingresa tu ciudad de residencia.
                     </div>
                   </div>
               </div>
               <div class="form-group">
                 <input type="text" [(ngModel)]="contact.city_to_visit" name="city_to_visit" class="form-control" placeholder="Ciudad de posible  visita *" id="city_to_visit" required data-validation-required-message="Por favor ingresa las ciudades que posiblemente visites." #city_to_visit="ngModel">
-                  <div  class="help-block text-danger" [hidden]="city_to_visit.valid || city_to_visit.pristine">
-                    <div *ngIf="city_to_visit.errors && city_to_visit.errors.required">
+                  <div  class="help-block text-danger" *ngIf="city_to_visit.invalid && (city_to_visit.dirty || city_to_visit.touched)">
+                    <div *ngIf="city_to_visit.errors.required">
                       Por favor ingresa las ciudades que posiblemente visites.
                     </div>
                   </div>
@@ -55,7 +64,11 @@
             <div class="col-md-6">
               <div class="form-group">
                 <textarea [(ngModel)]="contact.message" name="message" class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message." #message="ngModel"></textarea>
-                <p class="help-block text-danger"></p>
+                  <div  class="help-block text-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
+                    <div *ngIf="message.errors.required">
+                      Por favor ingresa tu mensaje.
+                    </div>
+                  </div>
               </div>
             </div>
             <div class="clearfix"></div>

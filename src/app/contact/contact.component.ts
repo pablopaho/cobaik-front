@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ContactService } from './contact.service';
 import { Contact } from './contact';
 
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -20,9 +19,12 @@ export class ContactComponent implements OnInit {
 
   onSubmit() { 
     this.contactService.createContact(this.contact)
-      .then(r => {
-        console.log(r)
+      .then(result => {
+        if(result) {
+          this.submitted = true; 
+        } else {
+          this.submitted = false;
+        }
       });
-    this.submitted = true; 
   }
 }
