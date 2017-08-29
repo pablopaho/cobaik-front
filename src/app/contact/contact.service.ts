@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
+import { environment } from 'environments/environment';
 
 import 'rxjs/add/operator/map';
 
@@ -13,7 +14,7 @@ import { Contact } from './contact';
 export class ContactService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private contactUrl = 'https://cobaik-dev-backend.herokuapp.com/contact';
+  private contactUrl = `${environment.URL_BASE_API}/contact`;
 
   constructor(private http: Http) { }
 

@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "if-env NODE_ENV=production && npm run postinstall:prod || npm run postinstall:dev",
+    "postinstall:prod": "ng build --aot -prod",
+    "postinstall:dev": "ng build --aot -dev"
   },
   "private": true,
   "dependencies": {
