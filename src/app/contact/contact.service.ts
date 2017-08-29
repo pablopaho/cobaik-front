@@ -18,12 +18,10 @@ export class ContactService {
 
   constructor(private http: Http) { }
 
-  createContact(contact: Contact): Promise<string> {
+  createContact(contact: Contact): Promise<any> {
     return this.http.
                 post(this.contactUrl, JSON.stringify(contact), {headers: this.headers})
-               .toPromise()
-               .then(res => res)
-               .catch(this.handleError);
+               .toPromise();
   }
 
   private handleError(error: any): Promise<any> {

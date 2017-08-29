@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms'; 
 import { HttpModule }    from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-
+import {BusyModule} from 'angular2-busy';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact/contact.service';
@@ -46,6 +47,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    BrowserAnimationsModule,
+    BusyModule
   ],
   bootstrap: [AppComponent]
 })

@@ -9,11 +9,6 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <div class="row">
-          <div *ngIf="submitted" class="alert alert-success">
-            Mensaje enviado !!
-          </div>
-        </div>
         <form (ngSubmit)="onSubmit()" name="contactForm" id="contactForm" novalidate #contactForm="ngForm">
           <div class="row">
             <div class="col-md-6">
@@ -73,8 +68,13 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-lg-12 text-center">
+              <div>
+                <div *ngIf="submitted" class="alert alert-success">
+                  Mensaje enviado. Muchas gracias por tus comentarios!
+                </div>
+              </div>
               <div id="success"></div>
-              <button type="submit" class="btn btn-xl" [disabled]="!contactForm.form.valid">Enviar</button>
+              <button type="submit" [ngBusy]="{busy: busy, message: 'Enviando...', backdrop: false, delay: 200, minDuration: 600}"  class="btn btn-xl" [disabled]="!contactForm.form.valid">Enviar</button>
             </div>
           </div>
         </form>
