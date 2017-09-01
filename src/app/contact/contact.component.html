@@ -35,7 +35,7 @@
                 <input type="number" [(ngModel)]="contact.age" name="age" class="form-control" placeholder="Edad" id="age" min="18" max="70" required data-validation-required-message="Por favor ingresa tu edad." #age="ngModel">
                   <div  class="help-block text-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
                     <div *ngIf="age.errors.required">
-                      Por favor ingresa tu ciudad de residencia.
+                      Por favor ingresa tu edad.
                     </div>
                   </div>
               </div>
