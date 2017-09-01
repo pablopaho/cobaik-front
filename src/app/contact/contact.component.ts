@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ContactService } from './contact.service';
 import { Contact } from './contact';
-
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-contact',
@@ -12,17 +12,20 @@ import { Contact } from './contact';
 export class ContactComponent implements OnInit {
   @Input() contact: Contact = new Contact("","",19,"","","");
   submitted = false;
-
+  busy: Promise<any>;
+  
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
   }
 
   onSubmit() { 
-    this.contactService.createContact(this.contact)
-      .then(r => {
-        console.log(r)
-      });
-    this.submitted = true; 
+    this.busy = this.contactService.createContact(this.contact).then(result => {
+      if(result) {
+        this.submitted = true; 
+       } else {
+         this.submitted = false;
+       }
+    });
   }
 }

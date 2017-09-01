@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
+import { environment } from 'environments/environment';
 
 import 'rxjs/add/operator/map';
 
@@ -13,16 +14,14 @@ import { Contact } from './contact';
 export class ContactService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private contactUrl = 'https://cobaik-dev-backend.herokuapp.com/contact';
+  private contactUrl = `${environment.URL_BASE_API}/contact`;
 
   constructor(private http: Http) { }
 
-  createContact(contact: Contact): Promise<string> {
+  createContact(contact: Contact): Promise<any> {
     return this.http.
                 post(this.contactUrl, JSON.stringify(contact), {headers: this.headers})
-               .toPromise()
-               .then(res => res)
-               .catch(this.handleError);
+               .toPromise();
   }
 
   private handleError(error: any): Promise<any> {
