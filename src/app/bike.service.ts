@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
+import { environment } from 'environments/environment';
 
 import 'rxjs/add/operator/map';
 
@@ -11,7 +12,7 @@ import { Bike } from './bike-detail/bike';
 export class BikeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private bikesUrl = 'https://cobaik-dev-backend.herokuapp.com/bikes';
+  private bikesUrl = `${environment.URL_BASE_API}/bikes`;
 
   constructor(private http: Http) { }
 
@@ -19,7 +20,7 @@ export class BikeService {
     return this.http.
                 get(this.bikesUrl)
                .map(response => response.json() as Bike[])
-              
+
   }
 
   private handleError(error: any): Promise<any> {

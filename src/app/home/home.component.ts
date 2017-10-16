@@ -18,22 +18,21 @@ export class HomeComponent implements OnInit {
         this.nav_bar();
     }
 
-
     buttons_animations(){
-        
+
     }
 
     nav_bar(){
         $('[data-toggle="affix"]').each(function() {
             var ele = $(this),
             wrapper = $('<div></div>');
-            
+
             ele.before(wrapper);
             $(window).on('scroll resize', function() {
-                
+
                 var height = ele.outerHeight(),
                 top = wrapper.offset().top;
-                
+
                 if ($(this).scrollTop() >= top){
                     wrapper.height(height);
                     ele.addClass("affix");
@@ -43,12 +42,11 @@ export class HomeComponent implements OnInit {
                     wrapper.height('auto');
                 }
             });
-            
-            // init
-            
+
+            // init          
             var height = ele.outerHeight(),
             top = wrapper.offset().top;
-            
+
             if ($(window).scrollTop() >= top){
                 wrapper.height(height);
                 ele.addClass("affix");

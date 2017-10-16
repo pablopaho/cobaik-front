@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private bikeService: BikeService) { }
 
   ngOnInit(): void {
-      this.bikes = this.bikeService.getBikes()
+      this.bikes = this.bikeService.getBikes();
   }
 
   onSelect(bike: Bike): void {
