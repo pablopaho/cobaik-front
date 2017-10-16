@@ -12,6 +12,8 @@ body {
 
 body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    padding-top: 110px;
+    padding-bottom: 50px;
 }
 
 hr {
@@ -334,7 +336,7 @@ body {
 .boton1{
     background-color: rgb(240, 95, 64);
     margin-top: -15px;
-    padding-top: 4px;    
+    padding-top: 4px;
 
 }
 

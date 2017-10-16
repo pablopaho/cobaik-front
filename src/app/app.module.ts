@@ -18,11 +18,12 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { BikeResultsComponent } from './bike-results/bike-results.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terminos-condiciones', component: TermsAndConditionsComponent },
-  { path: 'bicicletas', component: BikeDetailComponent },
+  { path: 'bicicletas', component: BikeResultsComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     BikeDetailComponent,
     TermsAndConditionsComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    BikeResultsComponent
   ],
   imports: [
     BrowserModule,
