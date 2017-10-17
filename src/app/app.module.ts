@@ -19,6 +19,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import { BikeResultsComponent } from './bike-results/bike-results.component';
+import { BikeSearchComponent } from './bike-search/bike-search.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     TermsAndConditionsComponent,
     MenuComponent,
     FooterComponent,
-    BikeResultsComponent
+    BikeResultsComponent,
+    BikeSearchComponent
   ],
   imports: [
     BrowserModule,
