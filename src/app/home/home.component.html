@@ -4,6 +4,21 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p>Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
+      <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+              <form (ngSubmit)="onSubmit()" name="search" >
+                  <input name="cityRide" type="text" value="" placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black"  />
+                  <input name="startDate" type="text" value="" placeholder="Ingresa la fecha de recogida" style="color: black"/>
+                  <input name="endDate" type="text" value="" placeholder="Ingresa la fecha de entrega" style="color: black" />
+                  <button type="submit" class="btn btn-primary btn-xl page-scroll"> Buscar</button>
+              </form>
+          </div>
+          <div class="col-md-2">
+          </div>
+      </div>
+
       <a href="#about" class="btn btn-primary btn-xl page-scroll">Más información</a>
     </div>
   </div>
