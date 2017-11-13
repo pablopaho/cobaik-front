@@ -4,14 +4,20 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p>Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
+      <div class="input-group input-daterange">
+          <input type="date" class="form-control" value="2012-04-05">
+          <div class="input-group-addon">to</div>
+          <input type="date" class="form-control" value="2012-04-19">
+      </div>
       <div class="row">
           <div class="col-md-2">
           </div>
           <div class="col-md-8">
               <form name="search" >
                   <input name="cityRide" type="text" value="" placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black"  />
-                  <input name="startDate" type="text" value="" placeholder="Ingresa la fecha de recogida" style="color: black"/>
-                  <input name="endDate" type="text" value="" placeholder="Ingresa la fecha de entrega" style="color: black" />
+                  <ng-datepicker style="color:black" ></ng-datepicker>
+                  <ng-datepicker></ng-datepicker>
+                  
                   <button type="submit" class="btn btn-primary btn-xl page-scroll"> Buscar</button>
               </form>
           </div>

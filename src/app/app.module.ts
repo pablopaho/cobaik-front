@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { DatepickerOptions } from 'ng2-datepicker';
 
 import { AppComponent } from './app.component';
 import { BusyModule } from 'angular2-busy';
@@ -31,6 +33,12 @@ const appRoutes: Routes = [
   }
 ];
 
+const options: DatepickerOptions = {
+  minYear: 1970,
+  maxYear: 2006,
+  firstCalendarDay: 0
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +55,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    Ng2PageScrollModule,
+      Ng2PageScrollModule,
+      NgDatepickerModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
