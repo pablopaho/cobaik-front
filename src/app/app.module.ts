@@ -5,7 +5,6 @@ import { HttpModule }    from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgDatepickerModule } from 'ng2-datepicker';
-import { DatepickerOptions } from 'ng2-datepicker';
 
 import { AppComponent } from './app.component';
 import { BusyModule } from 'angular2-busy';
@@ -32,12 +31,6 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   }
 ];
-
-const options: DatepickerOptions = {
-  minYear: 1970,
-  maxYear: 2006,
-  firstCalendarDay: 0
-};
 
 @NgModule({
   declarations: [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { DatepickerOptions }  from 'ng2-datepicker';
 
 @Component({
     selector: 'home',
@@ -7,7 +8,23 @@ import * as $ from 'jquery';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    constructor() { }
+
+    date: Date;
+    date2: Date;
+
+    options: DatepickerOptions = {
+        minYear: 2017,
+        maxYear: 2020,
+        displayFormat:  'MMM D[,] YYYY',
+        barTitleFormat: 'MMMM YYYY',
+        firstCalendarDay: 1
+    };
+
+    constructor() {
+        this.date  = new Date();
+        this.date2 = new Date();
+        this.date2.setDate(this.date2.getDate() + 1);
+    }
 
     ngOnInit() {
         // Closes the Responsive Menu on Menu Item Click

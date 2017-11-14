@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatepickerOptions }  from 'ng2-datepicker';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'app';
+    title = 'app';
+
+
+
 }
