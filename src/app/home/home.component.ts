@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { DatepickerOptions }  from 'ng2-datepicker';
+
+import { SearchRide } from './search-ride';
 
 @Component({
     selector: 'home',
@@ -11,20 +13,23 @@ export class HomeComponent implements OnInit {
 
     date: Date;
     date2: Date;
+    cityRide: String;
+
+
 
     options: DatepickerOptions = {
         minYear: 2017,
         maxYear: 2020,
-        displayFormat:  'MMM D[,] YYYY',
+        //displayFormat:  'MMM D[,] YYYY',
+        displayFormat:  'DD-MM-YYYY',
         barTitleFormat: 'MMMM YYYY',
         firstCalendarDay: 1
     };
 
     constructor() {
-        this.date  = new Date();
-        this.date2 = new Date();
-        this.date2.setDate(this.date2.getDate() + 1);
     }
+
+    @Input() searchRide: SearchRide = new SearchRide("", null, null);
 
     ngOnInit() {
         // Closes the Responsive Menu on Menu Item Click
@@ -37,6 +42,10 @@ export class HomeComponent implements OnInit {
 
     buttons_animations(){
 
+    }
+
+    onSubmit() {
+        console.log('onSubmit', this.searchRide);
     }
 
     nav_bar(){

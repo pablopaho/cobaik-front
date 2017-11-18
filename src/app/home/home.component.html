@@ -6,13 +6,14 @@
       <p>Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
       <div class="row">
           <div class="col-md-12">
-              <form name="search" >
-                  <input name="cityRide" type="text" value="" placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black"  />
-                  <input type="date" class="form-control" value="2012-04-05">
+              <form (ngSubmit)="onSubmit()" name="search">
+                  <input [(ngModel)]="searchRide.city"  name="cityRide" type="text" value="" placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black"  />
+                  <input type="date" [(ngModel)]="searchRide.startDate" class="form-control" value={{searchRide.startDate}} name="startDate">
                   <div class="input-group-addon">to</div>
-                  <input type="date" class="form-control" value="2012-04-19">
-                  <ng-datepicker [options]="options"  [(ngModel)]="date" name="startDate" style="color:black"></ng-datepicker>
-                  <ng-datepicker [options]="options" [(ngModel)]="date2" name="endDate"  style="color:black"></ng-datepicker>
+                  <input type="date" [(ngModel)]="searchRide.endDate" class="form-control" value={{searchRide.endDate}} name="endDate">
+                  <!-- <ng-datepicker [options]="options"  [(ngModel)]="searchRide.startDate" name="startDate" style="color:black"></ng-datepicker>
+                       <div class="input-group-addon">to</div>
+                       <ng-datepicker [options]="options" [(ngModel)]="date2" name="endDate"  style="color:black"></ng-datepicker> -->
                   
                   <button type="submit" class="btn btn-primary btn-xl page-scroll"> Buscar</button>
               </form>
