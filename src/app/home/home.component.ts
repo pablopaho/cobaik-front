@@ -1,20 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { DatepickerOptions }  from 'ng2-datepicker';
+import { Observable }        from 'rxjs/Observable';
 
 import { SearchRide } from './search-ride';
+import { BikeService} from '../bike.service';
+import { Bike } from '../bike-detail/bike';
 
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    styleUrls: ['./home.component.css'],
+    providers: [BikeService]
 })
 export class HomeComponent implements OnInit {
 
     date: Date;
     date2: Date;
     cityRide: String;
-
+    bikes: Observable<Bike[]>;
 
 
     options: DatepickerOptions = {
@@ -26,7 +30,7 @@ export class HomeComponent implements OnInit {
         firstCalendarDay: 1
     };
 
-    constructor() {
+    constructor(private bikeService: BikeService) {
     }
 
     @Input() searchRide: SearchRide = new SearchRide("", null, null);
@@ -46,6 +50,7 @@ export class HomeComponent implements OnInit {
 
     onSubmit() {
         console.log('onSubmit', this.searchRide);
+        this.bikes = this.bikeService.searchRide();
     }
 
     nav_bar(){

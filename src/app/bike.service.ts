@@ -23,6 +23,12 @@ export class BikeService {
 
   }
 
+    searchRide(): Observable<Bike[]> {
+        console.log('si llego a llamar al servicio');
+        return this.http.get(this.bikesUrl)
+            .map(response => response.json() as Bike[])
+    }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
