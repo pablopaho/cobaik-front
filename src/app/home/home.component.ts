@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as $ from 'jquery';
-import { DatepickerOptions }  from 'ng2-datepicker';
-import { Observable }        from 'rxjs/Observable';
+import * as $                       from 'jquery';
+import { DatepickerOptions }        from 'ng2-datepicker';
+import { Observable }               from 'rxjs/Observable';
 
-import { SearchRide } from './search-ride';
-import { BikeService} from '../bike.service';
-import { Bike } from '../bike-detail/bike';
+import { SearchRide }               from './search-ride';
+import { BikeService}               from '../bike.service';
+import { Bike }                     from '../bike-detail/bike';
 
 @Component({
     selector: 'home',
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 
     onSubmit() {
         console.log('onSubmit', this.searchRide);
-        this.bikes = this.bikeService.searchRide();
+        this.bikes = this.bikeService.searchRide(this.searchRide);
     }
 
     nav_bar(){
