@@ -3,7 +3,7 @@ import * as $                       from 'jquery';
 import { DatepickerOptions }        from 'ng2-datepicker';
 import { Observable }               from 'rxjs/Observable';
 
-import { SearchRide }               from './search-ride';
+import { SearchRide }               from '../bike-search/search-ride';
 import { BikeService}               from '../bike.service';
 import { Bike }                     from '../bike-detail/bike';
 

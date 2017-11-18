@@ -7,7 +7,7 @@ import { environment }     from 'environments/environment';
 import 'rxjs/add/operator/map';
 
 import { Bike }            from './bike-detail/bike';
-import { SearchRide }      from './home/search-ride';
+import { SearchRide }      from './bike-search/search-ride';
 
 @Injectable()
 export class BikeService {
