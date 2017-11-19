@@ -18,6 +18,7 @@ export class BikeService {
     constructor(private http: Http) { }
 
     getBikes(): Observable<Bike[]> {
+        console.log('estoy en el servicio getBikes()');
         return this.http.
             get(this.bikesUrl)
             .map(response => response.json() as Bike[])

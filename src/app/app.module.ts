@@ -26,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terminos-condiciones', component: TermsAndConditionsComponent },
   { path: 'bicicletas', component: BikeResultsComponent },
+  { path: 'bicicletas-disponibles', component: BikeSearchComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'

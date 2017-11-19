@@ -11,15 +11,20 @@ import { Observable }        from 'rxjs/Observable';
 })
 export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
-  selectedBike: Bike;
+    selectedBike: Bike;
 
-  constructor(private bikeService: BikeService) { }
+    constructor(private bikeService: BikeService) {
+          console.log('this.bikesakjsdhakdjs');
+    }
 
   ngOnInit(): void {
       this.bikes = this.bikeService.getBikes();
+      this.bikes.subscribe(b => console.log('BBBBBBB', b));
+
+      console.log('this.bikes si es esta', this.bikes);
   }
 
   onSelect(bike: Bike): void {
-    this.selectedBike = bike;
+      this.selectedBike = bike;
   }
 }
