@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 
     onSubmit() {
         console.log('onSubmit', this.searchRide);
-        this.bikes = this.bikeService.searchRide(this.searchRide);
+        //this.bikeService.searchRide();
     }
 
     nav_bar(){

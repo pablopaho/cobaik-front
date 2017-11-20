@@ -17,11 +17,11 @@ export class BikeResultsComponent implements OnInit {
           console.log('this.bikesakjsdhakdjs');
     }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+      //this.bikeService.searchRide();
       this.bikes = this.bikeService.getBikes();
-      this.bikes.subscribe(b => console.log('BBBBBBB', b));
-
-      console.log('this.bikes si es esta', this.bikes);
+      //this.bikes.subscribe(b => console.log('BBBBBBB', b));
+      //console.log('this.bikes si es esta', this.bikes);
   }
 
   onSelect(bike: Bike): void {
