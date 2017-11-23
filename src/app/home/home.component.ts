@@ -6,12 +6,15 @@ import { Observable }               from 'rxjs/Observable';
 import { SearchRide }               from '../bike-search/search-ride';
 import { BikeService}               from '../bike.service';
 import { Bike }                     from '../bike-detail/bike';
+import { DataService } from "../bike-results/data.service";
+
+
 
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    providers: [BikeService]
+    providers: [BikeService, DataService]
 })
 export class HomeComponent implements OnInit {
 
@@ -19,6 +22,7 @@ export class HomeComponent implements OnInit {
     date2: Date;
     cityRide: String;
     bikes: Observable<Bike[]>;
+    message:string;
 
 
     options: DatepickerOptions = {
@@ -30,7 +34,7 @@ export class HomeComponent implements OnInit {
         firstCalendarDay: 1
     };
 
-    constructor(private bikeService: BikeService) {
+    constructor(private bikeService: BikeService, public data: DataService) {
     }
 
     @Input() searchRide: SearchRide = new SearchRide("", null, null);
@@ -42,10 +46,15 @@ export class HomeComponent implements OnInit {
         });
 
         this.nav_bar();
+        this.data.currentMessage.subscribe(message => this.message = message)
     }
 
     buttons_animations(){
 
+    }
+
+    newMessage() {
+        this.data.changeMessage("Hello from homecomponent")
     }
 
     onSubmit() {

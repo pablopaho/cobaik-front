@@ -1,10 +1,11 @@
 <h2>My Bikes</h2>
+<span style="color:black">Acá sale mensaje: {{message}}</span>
 <ul class="bikes">
   <li *ngFor="let bike of bikes | async"
     [class.selected]="bike === selectedBike"
     (click)="onSelect(bike)">
     <span  class="badge">{{bike.id}}</span>
-    <span style="color:black">{{bike.reference}}</span>
+    <span style="color:black">Acá sale mensaje: {{message}}</span>
   </li>
 </ul>
 <bike-detail [bike]="selectedBike"></bike-detail>
