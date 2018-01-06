@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms'; 
+import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import {BusyModule} from 'angular2-busy';
+import { BusyModule } from 'angular2-busy';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact/contact.service';
@@ -18,10 +18,13 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { BikeResultsComponent } from './bike-results/bike-results.component';
+import { BikeSearchComponent } from './bike-search/bike-search.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terminos-condiciones', component: TermsAndConditionsComponent },
+  { path: 'bicicletas', component: BikeResultsComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -36,10 +39,12 @@ const appRoutes: Routes = [
     BikeDetailComponent,
     TermsAndConditionsComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    BikeResultsComponent,
+    BikeSearchComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     FormsModule,
     HttpModule,
     Ng2PageScrollModule,
