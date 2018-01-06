@@ -8,7 +8,7 @@ import {DataService} from "../data.service"
   selector: 'app-bike-results',
   templateUrl: './bike-results.component.html',
   styleUrls: ['./bike-results.component.css'],
-  providers: [BikeService]
+    providers: [BikeService, DataService]
 })
 export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
@@ -19,6 +19,7 @@ export class BikeResultsComponent implements OnInit {
 
     ngOnInit(): void {
         this.data.currentMessage.subscribe(message => this.message = message)
+        console.log('BikeResultsComponent', this.message)
         //this.bikes = this.bikeService.getBikes();
   }
 
