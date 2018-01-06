@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Bike } from '../bike-detail/bike';
-import { BikeService} from '../bike.service';
-import { Observable }        from 'rxjs/Observable';
-import {DataService} from "../data.service"
+import { BikeService } from '../bike.service';
+import { Observable } from 'rxjs/Observable';
+import { MessageService } from "../message.service"
 
 @Component({
   selector: 'app-bike-results',
@@ -10,16 +10,23 @@ import {DataService} from "../data.service"
   styleUrls: ['./bike-results.component.css'],
   providers: [BikeService]
 })
+
 export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
   selectedBike: Bike;
-    message:string;
+  message: string;
 
-    constructor(private bikeService: BikeService, private data: DataService) { }
+  constructor(private bikeService: BikeService,
+    private messageService: MessageService) {
+    console.log(JSON.stringify(this.messageService.storage));
+    if (this.messageService.storage !== undefined) {
+      this.message = this.messageService.storage.start_date;
+    } else {
+      this.message = "default";
+    }
+  }
 
-    ngOnInit(): void {
-        this.data.currentMessage.subscribe(message => this.message = message)
-        //this.bikes = this.bikeService.getBikes();
+  ngOnInit(): void {
   }
 
   onSelect(bike: Bike): void {

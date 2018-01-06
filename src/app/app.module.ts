@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { BusyModule } from 'angular2-busy';
@@ -13,12 +13,13 @@ import { ContactService } from './contact/contact.service';
 
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
-import { DataService } from './data.service';
+import { MessageService } from './message.service';
+
 
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BikeResultsComponent } from './bike-results/bike-results.component';
 import { BikeSearchComponent } from './bike-search/bike-search.component';
 
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terminos-condiciones', component: TermsAndConditionsComponent },
   { path: 'bicicletas', component: BikeResultsComponent },
-  { path: '',
+  {
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   }
@@ -51,11 +53,12 @@ const appRoutes: Routes = [
     Ng2PageScrollModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserAnimationsModule,
     BusyModule
   ],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
