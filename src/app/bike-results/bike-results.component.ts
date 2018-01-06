@@ -8,7 +8,7 @@ import { MessageService } from "../message.service"
   selector: 'app-bike-results',
   templateUrl: './bike-results.component.html',
   styleUrls: ['./bike-results.component.css'],
-  providers: [BikeService]
+    providers: [BikeService, DataService]
 })
 
 export class BikeResultsComponent implements OnInit {
