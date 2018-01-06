@@ -13,6 +13,7 @@ import { ContactService } from './contact/contact.service';
 
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
+import { DataService } from './data.service';
 
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MenuComponent } from './menu/menu.component';

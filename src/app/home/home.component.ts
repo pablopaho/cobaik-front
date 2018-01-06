@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import {DataService} from "../data.service"
 
 @Component({
     selector: 'home',
@@ -7,9 +8,20 @@ import * as $ from 'jquery';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    constructor() { }
+
+    message:string;
+
+    constructor(private data: DataService) {
+
+
+    }
+
+
 
     ngOnInit() {
+
+        this.data.currentMessage.subscribe(message => this.message = message)
+        
         // Closes the Responsive Menu on Menu Item Click
         $('.navbar-collapse ul li a').click(function() {
             $('.navbar-toggle:visible').click();
@@ -20,6 +32,11 @@ export class HomeComponent implements OnInit {
 
     buttons_animations(){
 
+    }
+
+    sendMessage() {
+        console.log("sendMessage");
+        //this.messageEvent.emit(this.message)
     }
 
     nav_bar(){
