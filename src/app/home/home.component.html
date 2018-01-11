@@ -4,9 +4,13 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p> {{message}} Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
-      <button (click)="sendData()" class="button"> Send Message </button>
+      <input [(ngModel)]="searchRide.city"  name="cityRide" type="text" value="" placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black"  />
+      <input type="date" [(ngModel)]="searchRide.startDate" class="form-control" value={{searchRide.startDate}} name="startDate">
+      <div class="input-group-addon">to</div>
+      <input type="date" [(ngModel)]="searchRide.endDate" class="form-control" value={{searchRide.endDate}} name="endDate">
+      <button (click)="sendData()" class="btn btn-primary btn-xl page-scroll"> Send Message </button>
 
-          <a href="#about" class="btn btn-primary btn-xl page-scroll">Más información</a>
+      <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Más información</a> -->
     </div>
   </div>
 </header>
