@@ -34,10 +34,12 @@ export class HomeComponent implements OnInit {
   }
 
   sendData() {
+    // VALIDAR DATOS crear servicio
     console.log("I am here", this.searchRide);
     this.d.storage = {
-      "start_date": "start",
-      "end_date": "end"
+      "start_date": this.searchRide.start_date,
+      "end_date": this.searchRide.end_date,
+      "city_description": this.searchRide.city_description
     }
     this.router.navigate(["bicicletas"]);
   }
