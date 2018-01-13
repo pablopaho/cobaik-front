@@ -14,6 +14,8 @@ import { ContactService } from './contact/contact.service';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
 import { MessageService } from './message.service';
+import { BikeSearchService } from './bike-results/bike-search.service';
+
 
 
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
@@ -58,7 +60,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BusyModule
   ],
-  providers: [MessageService],
+    providers: [MessageService, BikeSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

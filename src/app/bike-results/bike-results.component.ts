@@ -12,7 +12,6 @@ import { MessageService } from "../message.service"
 })
 
 export class BikeResultsComponent implements OnInit {
-  bikes: Observable<Bike[]>;
   selectedBike: Bike;
   message: string;
 

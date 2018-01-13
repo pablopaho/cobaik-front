@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
-import { DataService } from "../data.service";
 import { MessageService } from "../message.service";
+//import { BikeSearchService } from ".././bike-results/bike-search.service";
 import { Router, NavigationExtras } from "@angular/router";
 
 @Component({
@@ -11,12 +11,10 @@ import { Router, NavigationExtras } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  message: string;
+    constructor(private d: MessageService, private router: Router/*, private bikeSearch: BikeSearchService*/) {
+    }
 
-  constructor(private d: MessageService,
-    private router: Router) {
-
-  }
+    //@Input() searchRide: BikeSearchService = new BikeSearchService("", null, null);
 
   ngOnInit() {
     $('.navbar-collapse ul li a').click(function() {
@@ -31,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   sendData() {
-    console.log("I am here");
+      //console.log("I am here", this.searchRide);
     this.d.storage = {
       "start_date": "start",
       "end_date": "end"
