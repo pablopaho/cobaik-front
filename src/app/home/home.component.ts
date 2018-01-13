@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { DataService } from "../data.service";
 import { MessageService } from "../message.service";
 import { Router, NavigationExtras } from "@angular/router";
+import { SearchRide } from "./search-ride";
+
 
 @Component({
   selector: 'home',
@@ -12,6 +14,7 @@ import { Router, NavigationExtras } from "@angular/router";
 export class HomeComponent implements OnInit {
 
   message: string;
+  @Input() searchRide: SearchRide= new SearchRide(null, null, '');
 
   constructor(private d: MessageService,
     private router: Router) {
@@ -31,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   sendData() {
-    console.log("I am here");
+    console.log("I am here", this.searchRide);
     this.d.storage = {
       "start_date": "start",
       "end_date": "end"
