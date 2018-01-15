@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +23,9 @@ import { FooterComponent } from './footer/footer.component';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BikeResultsComponent } from './bike-results/bike-results.component';
 import { BikeSearchComponent } from './bike-search/bike-search.component';
+import { environment } from 'environments/environment';
+
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,9 +50,13 @@ const appRoutes: Routes = [
     BikeResultsComponent,
     BikeSearchComponent
   ],
-  imports: [
+  imports: [AgmCoreModule.forRoot({
+      apiKey: `${environment.GOOGLE_PLACES_API_KEY}`,
+      libraries: ["places"]
+    }),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     Ng2PageScrollModule,
     RouterModule.forRoot(
