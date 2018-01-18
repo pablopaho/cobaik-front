@@ -16,6 +16,9 @@ export class BikeResultsComponent implements OnInit {
   selectedBike: Bike;
   message: string;
   city_description: string;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  url: String = "https://cdn3.iconfinder.com/data/icons/transportation-icons-4/100/iconlar-08-24.png";
 
   constructor(private bikeService: BikeService,
     private messageService: MessageService) {
