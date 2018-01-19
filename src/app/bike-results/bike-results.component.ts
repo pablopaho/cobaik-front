@@ -32,6 +32,7 @@ export class BikeResultsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bikes = this.bikeService.getBikes();
   }
 
   onSelect(bike: Bike): void {
