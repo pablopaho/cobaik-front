@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   @Input() searchRide: SearchRide= new SearchRide(null, null, '');
+  latitude: number;
+  longitude: number;
 
   constructor(private d: MessageService,
     private router: Router,
@@ -41,8 +43,10 @@ export class HomeComponent implements OnInit {
         if (place.geometry === undefined || place.geometry === null) {
           return;
         }
+        this.latitude = place.geometry.location.lat();
+        this.longitude = place.geometry.location.lng();
+        this.searchRide.city_description = place.name;
 
-        this.searchRide.city_description = place.vicinity;
 
         //algunos valores que retorna google objeto place por ahora se envia
         // vicinity, pero podemos enviar cod postal, latitud longitud, etc.
@@ -50,6 +54,8 @@ export class HomeComponent implements OnInit {
         console.log("place", place);
         console.log("vicinity", place.vicinity);
         console.log("longitud", place.geometry.location.lng());
+        console.log("latitude", place.geometry.location.lat());
+
       });
     });
   });
@@ -65,13 +71,15 @@ export class HomeComponent implements OnInit {
 
   }
 
-  sendData() {
+  sendData(){
     // VALIDAR DATOS crear servicio
 
     this.d.storage = {
       "start_date": this.searchRide.start_date,
       "end_date": this.searchRide.end_date,
-      "city_description": this.searchRide.city_description
+      "city_description": this.searchRide.city_description,
+      "latitude": this.latitude,
+      "longitude": this.longitude
     }
     this.router.navigate(["bicicletas"]);
   }

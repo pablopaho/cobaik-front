@@ -14,9 +14,9 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-7 meta-search">
-          <h3><a href="#" title="">{{bike.name}} details!</a></h3>
+          <h3><a href="#" title="">{{bike.brand}} details!</a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-          <div><label>id: </label>{{bike.id}}</div>
+          <div><label>id: </label>{{bike.bikeId}}</div>
           <div><label>reference: </label>{{bike.reference}}</div>
         </div>
         <span class="clearfix borda"></span>
@@ -24,8 +24,8 @@
     </div>
     <div class="col-sm-4 col-sm-4 col-lg-4">
       <section>
-        <agm-map [latitude]="lat" [longitude]="lng">
-          <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="url"></agm-marker>
+        <agm-map [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude">
+          <agm-marker [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude" [iconUrl]="url"></agm-marker>
         </agm-map>
       </section>
     </div>
