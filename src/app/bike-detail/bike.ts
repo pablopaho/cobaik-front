@@ -1,5 +1,5 @@
 export class Bike {
-  id: number;
-  name: string;
+  bikeId: number;
+  brand: string;
   reference: string;
 }

@@ -32,7 +32,8 @@ export class BikeResultsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("i am here", this.cobaikLocation);
-    this.bikes = this.bikeService.getBikes();
+    this.bikes = this.bikeService.getAvailableBikes(this.cobaikLocation);
+    //this.bikes = this.bikeService.getBikes();
   }
 
   onSelect(bike: Bike): void {
