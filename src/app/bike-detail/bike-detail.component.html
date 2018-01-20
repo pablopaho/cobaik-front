@@ -1,9 +1,28 @@
-<div *ngIf="bike">
+<!-- <div *ngIf="bike">
   <h2>{{bike.name}} details!</h2>
   <div><label>id: </label>{{bike.id}}</div>
   <div><label>reference: </label>{{bike.reference}}</div>
   <div>
     <label>name: </label>
-    <input [(ngModel)]="bike.name" placeholder="name"/>
+    <input [(ngModel)]="bike.name" placeholder="name" />
   </div>
-</div>
+</div> -->
+
+<article *ngIf="bike" class="search-result row">
+  <div class="col-xs-12 col-sm-12 col-md-3">
+    <a href="#" title="Lorem ipsum" class="thumbnail">
+      <img src="https://i.pinimg.com/564x/be/3d/54/be3d541fd676e07cf00d2be573b990d8.jpg" alt="Lorem ipsum" />
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+    <h3><a href="#" title="">{{bike.name}} details!</a></h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
+    <div><label>id: </label>{{bike.id}}</div>
+    <div><label>reference: </label>{{bike.reference}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="bike.name" placeholder="name" />
+    </div>
+  </div>
+  <span class="clearfix borda"></span>
+</article>

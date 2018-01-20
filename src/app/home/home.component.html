@@ -4,8 +4,8 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p> {{message}} Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
-      <input [(ngModel)]="searchRide.city_description"  name="city_description" type="text"
-      placeholder="Ingresa la ciudad donde quieres tú bici" style="color: black">
+      <input placeholder="Ingresa la ciudad donde quieres tú bici" autocorrect="off" autocapitalize="off"
+      spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
       <input type="date" [(ngModel)]="searchRide.start_date" class="form-control"
       value={{searchRide.start_date}} name="start_date">
       <div class="input-group-addon">to</div>

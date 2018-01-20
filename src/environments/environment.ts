@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  URL_BASE_API: 'http://localhost:9000'
+  URL_BASE_API: 'http://localhost:9000',
+  GOOGLE_PLACES_API_KEY: 'AIzaSyD6nr4LPm5PsJ0cIrRsbw2xMNVsKyNvzXI'
 };

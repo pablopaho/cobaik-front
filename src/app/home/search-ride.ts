@@ -1,7 +1,7 @@
 export class SearchRide {
   start_date: Date;
   end_date: Date;
-  city_description: String;
+  city_description: any;
 
   public constructor(start_data: Date, end_date: Date,city_description: String) {
     this.start_date = start_data;

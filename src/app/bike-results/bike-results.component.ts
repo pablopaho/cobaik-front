@@ -15,18 +15,24 @@ export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
   selectedBike: Bike;
   message: string;
+  city_description: string;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  url: String = "https://cdn1.iconfinder.com/data/icons/colorix-sports/128/cycling-48.png";
 
   constructor(private bikeService: BikeService,
     private messageService: MessageService) {
     console.log(JSON.stringify(this.messageService.storage));
     if (this.messageService.storage !== undefined) {
       this.message = this.messageService.storage.start_date;
+      this.city_description = this.messageService.storage.city_description;
     } else {
       this.message = "default";
     }
   }
 
   ngOnInit(): void {
+    this.bikes = this.bikeService.getBikes();
   }
 
   onSelect(bike: Bike): void {
