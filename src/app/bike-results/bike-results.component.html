@@ -10,22 +10,26 @@
       <article *ngFor="let bike of bikes | async" class="search-result row">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <a href="#" title="Lorem ipsum" class="thumbnail">
-            <img src="https://i.pinimg.com/564x/be/3d/54/be3d541fd676e07cf00d2be573b990d8.jpg" alt="Lorem ipsum" />
+            <img src="{{bike.image_url}}" alt="Lorem ipsum" />
           </a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-7 meta-search">
-          <h3><a href="#" title="">{{bike.brand}} details!</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-          <div><label>id: </label>{{bike.bikeId}}</div>
+          <h3><a href="#" title="">Bike details!</a></h3>
+          <p>{{bike.description}}</p>
+          <div><label>brand: </label>{{bike.brand}}</div>
           <div><label>reference: </label>{{bike.reference}}</div>
+          <div><label>price: </label>{{bike.price}}</div>
+          <div><label>category: </label>{{bike.category_description}}</div>
+
         </div>
         <span class="clearfix borda"></span>
       </article>
     </div>
     <div class="col-sm-4 col-sm-4 col-lg-4">
       <section>
-        <agm-map [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude">
-          <agm-marker [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude" [iconUrl]="url"></agm-marker>
+        <agm-map [latitude]="cobaik_location.latitude" [longitude]="cobaik_location.longitude">
+          <agm-marker *ngFor = "let bike of bikes | async" [latitude]="bike.cobaik_location.latitude"
+          [longitude]="bike.cobaik_location.longitude" [iconUrl]="url"></agm-marker>
         </agm-map>
       </section>
     </div>
