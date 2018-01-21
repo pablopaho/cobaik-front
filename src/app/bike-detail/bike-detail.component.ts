@@ -8,6 +8,9 @@ import { Bike } from './bike';
 })
 export class BikeDetailComponent {
   @Input() bike: Bike;
-    
+
   constructor() { }
+
+  ngOnInit() {
+   }
 }

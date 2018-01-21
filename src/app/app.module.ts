@@ -31,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terminos-condiciones', component: TermsAndConditionsComponent },
   { path: 'bicicletas', component: BikeResultsComponent },
+  { path: 'bicicleta-detalle', component: BikeDetailComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -43,11 +44,11 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    BikeDetailComponent,
     TermsAndConditionsComponent,
     MenuComponent,
     FooterComponent,
     BikeResultsComponent,
+    BikeDetailComponent,
     BikeSearchComponent
   ],
   imports: [AgmCoreModule.forRoot({
