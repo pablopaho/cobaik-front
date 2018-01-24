@@ -5,8 +5,6 @@ export class Bike {
   brand: string;
   reference: string;
   price: number;
-  latitude: number;
-  longitude: number;
   description: string;
   category_description: string;
   image_url: string;
