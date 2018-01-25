@@ -12,12 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact/contact.service';
 
-import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeService } from './bike.service';
 import { MessageService } from './message.service';
 
 
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';

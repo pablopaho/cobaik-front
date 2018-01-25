@@ -18,7 +18,6 @@ import { CobaikLocation } from "./cobaik-location";
 
 export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
-  selected_bike: Bike;
   cobaik_location: CobaikLocation = new CobaikLocation(0,0,"");
 
   constructor(private bikeService: BikeService,

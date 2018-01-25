@@ -31,6 +31,16 @@ export class BikeService {
            .map(response => response.json() as Bike[]);
   }
 
+  getAvailableBike(bike_id: number): Observable<Bike> {
+
+    let url = `${this.bikes_url}/${bike_id}`;
+    console.log("I AM HERE", url);
+
+    return this.http.
+           get(url)
+           .map(response => response.json() as Bike);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
