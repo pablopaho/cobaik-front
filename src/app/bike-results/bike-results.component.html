@@ -7,7 +7,8 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-lg-8">
-      <article *ngFor="let bike of bikes | async" class="search-result row" (click)="onSelect(bike)">
+
+      <article *ngFor="let bike of bikes | async" class="search-result row">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <a href="#" title="Lorem ipsum" class="thumbnail">
             <img src="{{bike.image_url}}" alt="Lorem ipsum" />
@@ -22,6 +23,7 @@
           <div><label>category: </label>{{bike.category_description}}</div>
 
         </div>
+        <button (click)="goToDetailBike()" class="btn btn-primary btn-xl page-scroll"> Ver detalle </button>
         <span class="clearfix borda"></span>
       </article>
     </div>
