@@ -36,10 +36,7 @@ export class BikeResultsComponent implements OnInit {
     this.bikes = this.bikeService.getAvailableBikes(this.cobaik_location);
   }
 
-  onSelect(bike: Bike): void {
-    this.selected_bike = bike;
-    console.log('onSelect:', bike);
-    alert('antes de ');
+  goToDetailBike(){
     this.router.navigate(["bicicleta-detalle"]);
   }
 
