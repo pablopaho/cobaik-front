@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from "@angular/router";
+
 import { Bike } from '../bike-detail/bike';
 import { BikeService } from '../bike.service';
 import { Observable } from 'rxjs/Observable';
 import { MessageService } from "../message.service";
 import { CobaikLocation } from "./cobaik-location";
+
+
 
 @Component({
   selector: 'app-bike-results',
@@ -14,11 +18,11 @@ import { CobaikLocation } from "./cobaik-location";
 
 export class BikeResultsComponent implements OnInit {
   bikes: Observable<Bike[]>;
-  selected_bike: Bike;
   cobaik_location: CobaikLocation = new CobaikLocation(0,0,"");
 
   constructor(private bikeService: BikeService,
-    private messageService: MessageService) {
+              private messageService: MessageService,
+              private router: Router) {
     console.log(JSON.stringify(this.messageService.storage));
     if (this.messageService.storage !== undefined) {
       this.cobaik_location.latitude = messageService.storage.latitude;
@@ -31,8 +35,8 @@ export class BikeResultsComponent implements OnInit {
     this.bikes = this.bikeService.getAvailableBikes(this.cobaik_location);
   }
 
-  onSelect(bike: Bike): void {
-    this.selected_bike = bike;
+  goToDetailBike(){
+    this.router.navigate(["bicicleta-detalle"]);
   }
 
   getMakers(locations: Array<Bike>): Array<CobaikLocation> {
