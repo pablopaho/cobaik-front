@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { DataService } from "../data.service";
 import { MessageService } from "../message.service";
 import { Router, NavigationExtras } from "@angular/router";
-import { SearchRide } from "./search-ride";
+import { SearchRide } from "../bike-search/shared/search-ride";
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { } from 'googlemaps';
