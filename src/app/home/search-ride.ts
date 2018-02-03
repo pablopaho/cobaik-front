@@ -8,8 +8,8 @@ export class SearchRide {
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    this.start_date = dateNow;
-    this.end_date = tomorrow;
+    this.start_date       = dateNow;
+    this.end_date         = tomorrow;
     this.city_description = city_description;
   }
 }
