@@ -1,6 +1,5 @@
 import { ElementRef,Component, OnInit, Input, NgZone, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
-import { DataService } from "../data.service";
 import { MessageService } from "../message.service";
 import { Router, NavigationExtras } from "@angular/router";
 import { SearchRide } from "../bike-search/shared/search-ride";
