@@ -1,11 +1,15 @@
 export class SearchRide {
-  start_date: Date;
-  end_date: Date;
-  city_description: any;
+  start_date       : Date;
+  end_date         : Date;
+  city_description : any;
 
-  public constructor(start_data: Date, end_date: Date,city_description: String) {
-    this.start_date = start_data;
-    this.end_date = end_date;
+  public constructor(city_description: String) {
+    var dateNow  = new Date();
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    this.start_date = dateNow;
+    this.end_date = tomorrow;
     this.city_description = city_description;
   }
 }
