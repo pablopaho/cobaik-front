@@ -10,7 +10,7 @@ import { CobaikLocation } from "./cobaik-location";
 
 
 @Component({
-  selector: 'app-bike-results',
+  selector: 'bkr-bike-results',
   templateUrl: './bike-results.component.html',
   styleUrls: ['./bike-results.component.css'],
     providers: [BikeService]

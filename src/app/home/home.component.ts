@@ -10,7 +10,7 @@ import { } from 'googlemaps';
 
 
 @Component({
-  selector: 'home',
+  selector: 'ho-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
