@@ -14,7 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact/contact.service';
 import { BikeService } from './bike.service';
-import { MessageService } from './message.service';
+//import { MessageService } from './message.service';
+import { LocationService } from "./bike-results/shared/location.service";
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { MenuComponent } from './menu/menu.component';
@@ -49,7 +50,7 @@ import { AppRoutingModule } from './/app-routing.module';
     BusyModule,
     AppRoutingModule
   ],
-  providers: [MessageService],
+  providers: [LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

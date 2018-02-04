@@ -1,11 +1,11 @@
 import { ElementRef,Component, OnInit, Input, NgZone, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
-import { MessageService } from "../message.service";
 import { Router, NavigationExtras } from "@angular/router";
-import { SearchRide } from "../bike-search/shared/search-ride";
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { } from 'googlemaps';
+
+import { LocationService } from ".././bike-results/shared/location.service";
 
 
 @Component({
@@ -15,16 +15,15 @@ import { } from 'googlemaps';
 })
 
 export class HomeComponent implements OnInit {
-    latitude  : number;
-    longitude : number;
+    latitude         : number;
+    longitude        : number;
+    city_description : string;
 
     public searchControl   : FormControl;
     @ViewChild("search")
     public searchElementRef: ElementRef;
 
-    @Input() searchRide: SearchRide= new SearchRide('');
-
-    constructor(private d: MessageService,
+    constructor(private locationService: LocationService,
                 private router: Router,
                 private mapsAPILoader: MapsAPILoader, private ngZone: NgZone
                ) {}
@@ -45,9 +44,9 @@ export class HomeComponent implements OnInit {
                     if (place.geometry === undefined || place.geometry === null) {
                         return;
                     }
-                    this.latitude               = place.geometry.location.lat();
-                    this.longitude              = place.geometry.location.lng();
-                    this.searchRide.city_description = place.name;
+                    this.latitude         = place.geometry.location.lat();
+                    this.longitude        = place.geometry.location.lng();
+                    this.city_description = place.name;
                 });
             });
         });
@@ -60,10 +59,8 @@ export class HomeComponent implements OnInit {
     }
 
     sendData(){
-        this.d.storage = {
-                          "start_date"      : this.searchRide.start_date,
-                          "end_date"        : this.searchRide.end_date,
-                          "city_description": this.searchRide.city_description,
+        this.locationService.storage = {
+                          "city_description": this.city_description,
                           "latitude"        : this.latitude,
                           "longitude"       : this.longitude
                          }

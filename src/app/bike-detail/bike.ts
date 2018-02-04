@@ -1,4 +1,4 @@
-import { CobaikLocation } from "../bike-results/cobaik-location";
+import { CobaikLocation } from "../bike-results/shared/cobaik-location";
 
 export class Bike {
   bike_id: number;

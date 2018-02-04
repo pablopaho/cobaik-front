@@ -7,7 +7,7 @@ import { environment } from 'environments/environment';
 import 'rxjs/add/operator/map';
 
 import { Bike } from './bike-detail/bike';
-import { CobaikLocation } from './bike-results/cobaik-location';
+import { CobaikLocation } from './bike-results/shared/cobaik-location';
 
 @Injectable()
 export class BikeService {
