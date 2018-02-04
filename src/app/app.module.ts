@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './contact/contact.service';
-import { BikeService } from './bike.service';
+//import { BikeService } from './bikes/bike.service';
 //import { MessageService } from './message.service';
 import { LocationService } from "./bike-results/shared/location.service";
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from "@angular/router";
 
 import { Bike } from '../bike-detail/bike';
-import { BikeService } from '../bike.service';
+import { BikeService } from '.././bikes/bike.service';
 import { Observable } from 'rxjs/Observable';
 import { LocationService } from "./shared/location.service";
 import { CobaikLocation } from "./shared/cobaik-location";

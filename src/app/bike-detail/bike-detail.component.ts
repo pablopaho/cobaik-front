@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Bike } from './bike';
-import { BikeService } from '../bike.service';
+import { BikeService } from '.././bikes/bike.service';
 import { Observable } from 'rxjs/Observable';
 
 
