@@ -1,11 +1,11 @@
 export class CobaikLocation {
-  latitude        : number;
-  longitude       : number;
-  city_description: string;
+  latitude       : number;
+  longitude      : number;
+  cityDescription: string;
 
-  public constructor(latitude, longitude, city_description) {
-      this.latitude    = latitude;
-      this.longitude   = longitude;
-      city_description = city_description;
+  public constructor(latitude, longitude, cityDescription) {
+      this.latitude   = latitude;
+      this.longitude  = longitude;
+      cityDescription = cityDescription;
   }
 }

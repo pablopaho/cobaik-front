@@ -25,9 +25,9 @@ export class BikeService {
 
   }
 
-  getAvailableBikes(cobaik_location: CobaikLocation): Observable<Bike[]> {
+  getAvailableBikes(cobaikLocation: CobaikLocation): Observable<Bike[]> {
     return this.http.
-           post(this.bikes_available, cobaik_location)
+           post(this.bikes_available, cobaikLocation)
            .map(response => response.json() as Bike[]);
   }
 

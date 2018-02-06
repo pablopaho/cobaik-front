@@ -15,9 +15,9 @@ import { LocationService } from ".././bike-results/shared/location.service";
 })
 
 export class HomeComponent implements OnInit {
-    latitude         : number;
-    longitude        : number;
-    city_description : string;
+    latitude        : number;
+    longitude       : number;
+    cityDescription : string;
 
     public searchControl   : FormControl;
     @ViewChild("search")
@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
 
     constructor(private locationService: LocationService,
                 private router: Router,
-                private mapsAPILoader: MapsAPILoader, private ngZone: NgZone
+                private mapsAPILoader: MapsAPILoader,
+                private ngZone: NgZone
                ) {}
 
     ngOnInit() {
@@ -46,7 +47,7 @@ export class HomeComponent implements OnInit {
                     }
                     this.latitude         = place.geometry.location.lat();
                     this.longitude        = place.geometry.location.lng();
-                    this.city_description = place.name;
+                    this.cityDescription = place.name;
                 });
             });
         });
@@ -60,7 +61,7 @@ export class HomeComponent implements OnInit {
 
     sendData(){
         this.locationService.storage = {
-                          "city_description": this.city_description,
+                          "cityDescription": this.cityDescription,
                           "latitude"        : this.latitude,
                           "longitude"       : this.longitude
                          }
