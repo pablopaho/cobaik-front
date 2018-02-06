@@ -23,7 +23,7 @@ export class BikeResultsComponent implements OnInit {
   constructor(private bikeService     : BikeService,
               private locationService : LocationService,
               private router          : Router) {
-    console.log(JSON.stringify(this.locationService.storage));
+    
     if (this.locationService.storage !== undefined) {
       this.cobaik_location.latitude = locationService.storage.latitude;
       this.cobaik_location.longitude = locationService.storage.longitude;
