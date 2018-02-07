@@ -11,7 +11,7 @@
       <article *ngFor="let bike of bikes" class="search-result row">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <a href="#" title="Lorem ipsum" class="thumbnail">
-            <img src="{{bike.image_url}}" alt="Lorem ipsum" />
+            <img src="{{bike.imageUrl}}" alt="Lorem ipsum" />
           </a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-7 meta-search">
@@ -23,7 +23,7 @@
           <div><label>category: </label>{{bike.categoryDescription}}</div>
 
         </div>
-        <button (click)="goToDetailBike()" class="btn btn-primary btn-xl page-scroll"> Ver detalle </button>
+        <button (click)="goToDetailBike(bike.id)" class="btn btn-primary btn-xl page-scroll"> Ver detalle </button>
         <span class="clearfix borda"></span>
       </article>
     </div>

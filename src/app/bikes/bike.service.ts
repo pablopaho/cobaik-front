@@ -32,10 +32,8 @@ export class BikeService {
   }
 
   getAvailableBike(bike_id: number): Observable<Bike> {
-
     let url = `${this.bikes_url}/${bike_id}`;
     console.log("I AM HERE", url);
-
     return this.http.
            get(url)
            .map(response => response.json() as Bike);
