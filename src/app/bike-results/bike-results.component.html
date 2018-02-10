@@ -20,7 +20,7 @@
           <div><label>brand: </label>{{bike.brand}}</div>
           <div><label>reference: </label>{{bike.reference}}</div>
           <div><label>price: </label>{{bike.price}}</div>
-          <div><label>category: </label>{{bike.category_description}}</div>
+          <div><label>category: </label>{{bike.categoryDescription}}</div>
 
         </div>
         <button (click)="goToDetailBike()" class="btn btn-primary btn-xl page-scroll"> Ver detalle </button>
@@ -29,15 +29,15 @@
     </div>
     <div class="col-sm-4 col-sm-4 col-lg-4">
       <section>
-        <agm-map [latitude]="cobaik_location.latitude" [longitude]="cobaik_location.longitude">
-          <agm-marker *ngFor = "let bike of bikes | async" [latitude]="bike.cobaik_location.latitude"
-          [longitude]="bike.cobaik_location.longitude" [iconUrl]="url"></agm-marker>
+        <agm-map [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude">
+            <agm-marker *ngFor = "let bike of bikes | async" [latitude]="bike.cobaikLocation.latitude"
+                        [longitude]="bike. cobaikLocation.longitude" [iconUrl]="url"></agm-marker>
         </agm-map>
       </section>
     </div>
   </div>
 </div>
-<!-- <bike-detail [bike]="selectedBike"></bike-detail> -->
+<!-- <bkd-bike-detail [bike]="selectedBike"></bkd-bike-detail> -->
 
 <!--
 <div class="container">

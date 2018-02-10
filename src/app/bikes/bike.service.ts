@@ -6,8 +6,8 @@ import { environment } from 'environments/environment';
 
 import 'rxjs/add/operator/map';
 
-import { Bike } from './bike-detail/bike';
-import { CobaikLocation } from './bike-results/cobaik-location';
+import { Bike } from '.././bike-detail/bike';
+import { CobaikLocation } from '.././bike-results/shared/cobaik-location';
 
 @Injectable()
 export class BikeService {
@@ -25,9 +25,9 @@ export class BikeService {
 
   }
 
-  getAvailableBikes(cobaik_location: CobaikLocation): Observable<Bike[]> {
+  getAvailableBikes(cobaikLocation: CobaikLocation): Observable<Bike[]> {
     return this.http.
-           post(this.bikes_available, cobaik_location)
+           post(this.bikes_available, cobaikLocation)
            .map(response => response.json() as Bike[]);
   }
 

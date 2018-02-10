@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LocationService {
-
-  constructor() { }
-
+  public storage: any;
+  public constructor() { }
 }

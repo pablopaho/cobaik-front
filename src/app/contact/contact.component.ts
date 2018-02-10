@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ContactService } from './contact.service';
-import { Contact } from './contact';
 import 'rxjs/add/operator/toPromise';
 
+import { ContactService } from './contact.service';
+import { Contact } from './shared/contact';
+
+
 @Component({
-  selector: 'app-contact',
+  selector: 'co-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   providers: [ ContactService ]

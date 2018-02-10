@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Bike } from './bike';
-import { BikeService } from '../bike.service';
+import { BikeService } from '.././bikes/bike.service';
 import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-  selector: 'bike-detail',
+  selector: 'bkd-bike-detail',
   templateUrl: './bike-detail.component.html',
   styleUrls: ['./bike-detail.component.css'],
   providers: [BikeService]
