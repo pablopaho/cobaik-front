@@ -6,7 +6,7 @@ import { BikeService } from '.././bikes/bike.service';
 import { Observable } from 'rxjs/Observable';
 import { LocationService } from "./shared/location.service";
 import { CobaikLocation } from "./shared/cobaik-location";
-
+import { BikeIdentificationService } from ".././bike-detail/shared/bike-identification.service"
 
 
 @Component({
@@ -17,29 +17,31 @@ import { CobaikLocation } from "./shared/cobaik-location";
 })
 
 export class BikeResultsComponent implements OnInit {
-  bikes: Observable<Bike[]>;
-  cobaikLocation: CobaikLocation = new CobaikLocation(0,0,"");
+    bikes: Observable<Bike[]>;
+    cobaikLocation: CobaikLocation = new CobaikLocation(0,0,"");
 
-  constructor(private bikeService     : BikeService,
-              private locationService : LocationService,
-              private router          : Router) {
-    
-    if (this.locationService.storage !== undefined) {
-      this.cobaikLocation.latitude        = locationService.storage.latitude;
-      this.cobaikLocation.longitude       = locationService.storage.longitude;
-      this.cobaikLocation.cityDescription = locationService.storage.cityDescription;
+    constructor(private bikeService     : BikeService,
+                private locationService : LocationService,
+                private bikeIdentificationService: BikeIdentificationService,
+                private router          : Router) {
+        
+        if (this.locationService.storage !== undefined) {
+            this.cobaikLocation.latitude        = locationService.storage.latitude;
+            this.cobaikLocation.longitude       = locationService.storage.longitude;
+            this.cobaikLocation.cityDescription = locationService.storage.cityDescription;
+        }
     }
-  }
 
-  ngOnInit(): void {
-    this.bikes = this.bikeService.getAvailableBikes(this.cobaikLocation);
-  }
+    ngOnInit(): void {
+        this.bikes = this.bikeService.getAvailableBikes(this.cobaikLocation);
+    }
 
-  goToDetailBike(){
-    this.router.navigate(["bicicleta-detalle"]);
-  }
+    goToDetailBike(bikeId: number){
+      this.bikeIdentificationService.bikeId = bikeId;
+      this.router.navigate(["bicicleta-detalle"]);
+    }
 
-  getMakers(locations: Array<Bike>): Array<CobaikLocation> {
-    return locations.map(x => x.cobaikLocation);
-  }
+    getMakers(locations: Array<Bike>): Array<CobaikLocation> {
+        return locations.map(x => x.cobaikLocation);
+    }
 }
