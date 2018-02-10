@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
 import { environment } from 'environments/environment';
-
 import 'rxjs/add/operator/map';
-
 import 'rxjs/add/operator/toPromise';
 
-import { Contact } from './contact';
+import { Contact } from './shared/contact';
 
 @Injectable()
 export class ContactService {

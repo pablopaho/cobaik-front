@@ -6,11 +6,12 @@
   </div>
   </div>
   <div class="row">
-    <div class="col-sm-8 col-lg-8">
-      <article *ngFor="let bike of bikes | async" class="search-result row">
+    <ng-template #loading>Loading User Data...</ng-template>
+    <div class="col-sm-8 col-lg-8" *ngIf="bikes | async; let bikes; else loading">
+      <article *ngFor="let bike of bikes" class="search-result row">
         <div class="col-xs-12 col-sm-12 col-md-3">
           <a href="#" title="Lorem ipsum" class="thumbnail">
-            <img src="{{bike.image_url}}" alt="Lorem ipsum" />
+            <img src="{{bike.imageUrl}}" alt="Lorem ipsum" />
           </a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-7 meta-search">
@@ -19,23 +20,24 @@
           <div><label>brand: </label>{{bike.brand}}</div>
           <div><label>reference: </label>{{bike.reference}}</div>
           <div><label>price: </label>{{bike.price}}</div>
-          <div><label>category: </label>{{bike.category_description}}</div>
+          <div><label>category: </label>{{bike.categoryDescription}}</div>
 
         </div>
+        <button (click)="goToDetailBike(bike.id)" class="btn btn-primary btn-xl page-scroll"> Ver detalle </button>
         <span class="clearfix borda"></span>
       </article>
     </div>
     <div class="col-sm-4 col-sm-4 col-lg-4">
       <section>
-        <agm-map [latitude]="cobaik_location.latitude" [longitude]="cobaik_location.longitude">
-          <agm-marker *ngFor = "let bike of bikes | async" [latitude]="bike.cobaik_location.latitude"
-          [longitude]="bike.cobaik_location.longitude" [iconUrl]="url"></agm-marker>
+        <agm-map [latitude]="cobaikLocation.latitude" [longitude]="cobaikLocation.longitude">
+            <agm-marker *ngFor = "let bike of bikes | async" [latitude]="bike.cobaikLocation.latitude"
+                        [longitude]="bike. cobaikLocation.longitude" [iconUrl]="url"></agm-marker>
         </agm-map>
       </section>
     </div>
   </div>
 </div>
-<!-- <bike-detail [bike]="selectedBike"></bike-detail> -->
+<!-- <bkd-bike-detail [bike]="selectedBike"></bkd-bike-detail> -->
 
 <!--
 <div class="container">

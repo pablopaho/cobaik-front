@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class MessageService {
-  public storage: any;
+export class BikeIdentificationService {
+  public bikeId: number;
   public constructor() { }
 }
