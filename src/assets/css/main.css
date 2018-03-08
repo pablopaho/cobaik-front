@@ -89,15 +89,13 @@ aside {
     padding: 0;
 }
 
-
-
 header {
     position: relative;
     width: 100%;
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/img.jpg);
+    background-image: url('../img/Header_bici.png');
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -125,7 +123,7 @@ header .header-content .header-content-inner hr {
 
 header .header-content .header-content-inner p {
     margin-bottom: 50px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: rgba(255,255,255,1.0);
 }
@@ -164,7 +162,17 @@ header .bg-form {
         max-width: 80%;
         font-size: 18px;
     }
-}
+    .form-control {
+      font-size: 14px;
+      color:#FF0000;
+      margin: 0 auto;
+      padding: 25px 20px;
+      width: 10%;
+      height: 36px;
+    }
+
+  }
+
 
 .section-heading {
     margin-top: 0;
@@ -243,7 +251,7 @@ header .bg-form {
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
         font-size: 22px;
     }
-}
+  }
 
 .call-to-action h3 {
     margin: 0 auto 20px;
@@ -288,14 +296,15 @@ header .bg-form {
 
 .btn {
     border: 0;
-    border-radius: 300px;
+    border-radius: 5px;
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
 }
 
 .btn-xl {
-    padding: 15px 30px;
+    padding: 16px 35px;
+    margin: 0px 15px;
 }
 
 .btn-contact {
@@ -384,4 +393,14 @@ input[type=date] {
 
 .fa {
     color:#5dd374;
+}
+
+.form-control {
+  font-size: 14px;
+  color:#FF0000;
+  margin: 0px 100px;
+  padding: 25px 20px;
+  width: 90%;
+  height: 36px;
+
 }

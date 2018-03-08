@@ -4,32 +4,20 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p> {{message}} Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
-      <div class="container row">
-        <div class="col-lg-4 col-search">
-        <input placeholder="Ingresa la ciudad donde quieres tú bici" autocorrect="off" autocapitalize="off"
-        spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
-        </div>
-        <!-- <div class="col-lg-2 col-avail-start">
-             <input type="date" [(ngModel)]="searchRide.start_date" class="form-control"
-             value={{searchRide.start_date}} name="start_date">
-             </div>
-             <div class="col-lg-2 col-avail-start">
-             <input type="date" [(ngModel)]="searchRide.end_date" class="form-control" value={{searchRide.end_date}} name="end_date">
-             </div> -->
-        <div class="col-lg-2 col-avail-start">
-          <button (click)="sendData()" class="btn btn-primary btn-xl page-scroll"> Send Message </button>
-        </div>
-      </div>
-   </div>
- </div>
-</header>
 
-      <!--<input placeholder="Ingresa la ciudad donde quieres tú bici" autocorrect="off" autocapitalize="off"
-      spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
-      <button (click)="sendData()" class="btn btn-primary btn-xl page-scroll"> Buscar </button>
+  <div class=" container row">
+    <div class="col-lg-7 col-search">
+      <input class="text-area" placeholder="Ingresa la ciudad donde quieres tú bici"  autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    </div>
+    <div class="col-md-2 col-avail-start">
+      <button (click)="sendData()" class="btn btn-primary btn-xl page-scroll"> Send Message </button>
     </div>
   </div>
-</header>-->
+
+
+</div>
+</div>
+</header>
 
 <section class="bg-primary" id="about">
   <div class="container">
@@ -78,4 +66,3 @@
     </div>
   </div>
 </section>
-<co-contact></co-contact>
