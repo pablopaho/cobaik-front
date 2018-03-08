@@ -4,11 +4,19 @@
       <h1 id="homeHeading">En bici a donde vayas</h1>
       <hr>
       <p> {{message}} Conviértete en un Cobaiker, solicita una bici, disfruta el camino y repite tu experiencia!</p>
-      <input placeholder="Ingresa la ciudad donde quieres tú bici" autocorrect="off" autocapitalize="off"
-      spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+
+  <div class=" container row">
+    <div class="col-lg-7 col-search">
+      <input class="text-area" placeholder="Ingresa la ciudad donde quieres tú bici"  autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    </div>
+    <div class="col-md-2 col-avail-start">
       <button (click)="sendData()" class="btn btn-primary btn-xl page-scroll"> Buscar </button>
     </div>
   </div>
+
+
+</div>
+</div>
 </header>
 
 <section class="bg-primary" id="about">

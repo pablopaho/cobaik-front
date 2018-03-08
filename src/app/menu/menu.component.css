@@ -9,6 +9,11 @@
     padding-bottom: 20px;
 }
 
+.nav li a {
+  padding: 15px 20px;
+  margin-top: 15px;
+  margin-bottom: 0 auto;
+}
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
